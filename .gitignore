@@ -14,5 +14,3 @@ artifacts
 coverage
 .eslintcache
 .openzeppelin/*.json
-
-.next

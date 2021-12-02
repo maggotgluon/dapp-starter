@@ -1,4 +1,5 @@
 import { useWeb3React } from "@web3-react/core";
+import React from "react";
 
 export function ChainId() {
   const { chainId } = useWeb3React();
@@ -24,5 +25,3 @@ export function ChainId() {
     </div>
   );
 }
-
-export default ChainId;
