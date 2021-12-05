@@ -76,15 +76,15 @@ Output:
 Generating typings for: 0 artifacts in dir: src/types for target: ethers-v5
 Successfully generated 3 typings!
 Successfully generated 3 typings for external artifacts!
-ITManToken deployed to: 0x58f0A11F8B2bD7c5D9251b620dcF502D3A40FCF2
-Name ITManToken
+SummonerCystalToken deployed to: 0x58f0A11F8B2bD7c5D9251b620dcF502D3A40FCF2
+Name SummonerCystalToken
 Symbol ITM
 Decimals 18
 Total Supply BigNumber { _hex: '0xd3c21bcecceda1000000', _isBigNumber: true }
 Owner 0x096cd10D7BEF8D5923b18b18E9f79CA230ee2285
 openingTime 1630780077
 closeTime 1631384877
-ITManTokenCrowdsale deployed to: 0x304c476c4521B6d352E76a950581A59Fe2032437
+SummonerCystalTokenCrowdsale deployed to: 0x304c476c4521B6d352E76a950581A59Fe2032437
 ```
 
 Next step is verifying the IT Man Token
@@ -102,10 +102,10 @@ Successfully generated 3 typings!
 Successfully generated 3 typings for external artifacts!
 Compiling 1 file with 0.8.4
 Successfully submitted source code for contract
-contracts/ITManToken.sol:ITManToken at 0x58f0A11F8B2bD7c5D9251b620dcF502D3A40FCF2
+contracts/SummonerCystalToken.sol:SummonerCystalToken at 0x58f0A11F8B2bD7c5D9251b620dcF502D3A40FCF2
 for verification on Etherscan. Waiting for verification result...
 
-Successfully verified contract ITManToken on Etherscan.
+Successfully verified contract SummonerCystalToken on Etherscan.
 https://ropsten.etherscan.io/address/0x58f0A11F8B2bD7c5D9251b620dcF502D3A40FCF2#code
 ```
 
@@ -127,10 +127,10 @@ Compiling 1 file with 0.8.4
 ... some warnings
 
 Successfully submitted source code for contract
-contracts/ITManTokenCrowdsale.sol:ITManTokenCrowdsale at 0x304c476c4521B6d352E76a950581A59Fe2032437
+contracts/SummonerCystalTokenCrowdsale.sol:SummonerCystalTokenCrowdsale at 0x304c476c4521B6d352E76a950581A59Fe2032437
 for verification on Etherscan. Waiting for verification result...
 
-Successfully verified contract ITManTokenCrowdsale on Etherscan.
+Successfully verified contract SummonerCystalTokenCrowdsale on Etherscan.
 https://ropsten.etherscan.io/address/0x304c476c4521B6d352E76a950581A59Fe2032437#code
 ```
 

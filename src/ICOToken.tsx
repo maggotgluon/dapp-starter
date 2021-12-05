@@ -5,11 +5,11 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useQuery } from "react-query";
 
-import ITManTokenArtifacts from "./artifacts/contracts/ITManToken.sol/ITManToken.json";
-import ITManTokenCrowdsaleArtifacts from "./artifacts/contracts/ITManTokenCrowdsale.sol/ITManTokenCrowdsale.json";
+import SummonerCystalTokenArtifacts from "./artifacts/contracts/SummonerCystalToken.sol/SummonerCystalToken.json";
+import SummonerCystalTokenCrowdsaleArtifacts from "./artifacts/contracts/SummonerCystalTokenCrowdsale.sol/SummonerCystalTokenCrowdsale.json";
 import logger from "./logger";
-import { ITManToken } from "./types/ITManToken";
-import { ITManTokenCrowdsale } from "./types/ITManTokenCrowdsale";
+import { SummonerCystalToken } from "./types/SummonerCystalToken";
+import { SummonerCystalTokenCrowdsale } from "./types/SummonerCystalTokenCrowdsale";
 
 interface Props {
   crowdsaleAddress: string;
@@ -29,7 +29,7 @@ const TokenInfo = ({ tokenAddress }: { tokenAddress: string }) => {
   const fetchTokenInfo = async () => {
     logger.warn("fetchTokenInfo");
     const provider = library || new ethers.providers.Web3Provider(window.ethereum || providerUrl);
-    const tokenContract = new ethers.Contract(tokenAddress, ITManTokenArtifacts.abi, provider) as ITManToken;
+    const tokenContract = new ethers.Contract(tokenAddress, SummonerCystalTokenArtifacts.abi, provider) as SummonerCystalToken;
     const name = await tokenContract.name();
     const symbol = await tokenContract.symbol();
     const decimals = await tokenContract.decimals();
@@ -87,9 +87,9 @@ const ICOToken = ({ crowdsaleAddress }: Props) => {
     const provider = library || new ethers.providers.Web3Provider(window.ethereum || providerUrl);
     const contract = new ethers.Contract(
       crowdsaleAddress,
-      ITManTokenCrowdsaleArtifacts.abi,
+      SummonerCystalTokenCrowdsaleArtifacts.abi,
       provider
-    ) as ITManTokenCrowdsale;
+    ) as SummonerCystalTokenCrowdsale;
     contract.token().then(setTokenAddress).catch(logger.error);
     contract
       .remainingTokens()
@@ -146,7 +146,7 @@ const ICOToken = ({ crowdsaleAddress }: Props) => {
   const totalCost = (1 / Number(price)) * amount;
   return (
     <div className="relative py-3 sm:max-w-5xl sm:mx-auto">
-      {chainId !== 31337 && (
+      {chainId !== 3 && (
         <>
           <div className="alert">
             <div className="flex-1">
@@ -176,7 +176,7 @@ const ICOToken = ({ crowdsaleAddress }: Props) => {
 
         <div className="text-center shadow-2xl card">
           <div className="card-body">
-            <h2 className="card-title">ITMan Token</h2>
+            <h2 className="card-title">Summoner cystal Token</h2>
             {Number(closingTime) > 0 && (
               <div className="alert">
                 <div className="flex-1">
@@ -234,7 +234,7 @@ const ICOToken = ({ crowdsaleAddress }: Props) => {
 
         <div className="divider"></div>
 
-        {/* <div className="items-center justify-center max-w-2xl px-4 py-4 mx-auto text-xl border-orange-500 lg:flex md:flex">
+        <div className="items-center justify-center max-w-2xl px-4 py-4 mx-auto text-xl border-orange-500 lg:flex md:flex">
           <div className="p-2 font-semibold">
             <a
               href={`https://ropsten.etherscan.io/address/${tokenAddress}`}
@@ -245,7 +245,7 @@ const ICOToken = ({ crowdsaleAddress }: Props) => {
               View Token on Etherscan
             </a>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );

@@ -41,43 +41,43 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const ITManToken = await ethers.getContractFactory("ITManToken");
-  const itManToken = await ITManToken.deploy();
+  const SummonerCystalToken = await ethers.getContractFactory("SummonerCystalToken");
+  const summonercystalToken = await SummonerCystalToken.deploy();
 
-  await itManToken.deployed();
-  console.log("ITManToken deployed to:", itManToken.address);
-  console.log("Name", await itManToken.name());
-  console.log("Symbol", await itManToken.symbol());
-  console.log("Decimals", await itManToken.decimals());
-  const totalSupply = await itManToken.totalSupply();
+  await summonercystalToken.deployed();
+  console.log("SummonerCystalToken deployed to:", summonercystalToken.address);
+  console.log("Name", await summonercystalToken.name());
+  console.log("Symbol", await summonercystalToken.symbol());
+  console.log("Decimals", await summonercystalToken.decimals());
+  const totalSupply = await summonercystalToken.totalSupply();
   console.log("Total Supply", totalSupply);
-  const owner = await itManToken.owner();
+  const owner = await summonercystalToken.owner();
   console.log("Owner", owner);
 
   // deploy crowdsale contract
-  const ITManTokenCrowdsale = await ethers.getContractFactory("ITManTokenCrowdsale");
-  const rate = 500; // 500 wei per token
+  const SummonerCystalTokenCrowdsale = await ethers.getContractFactory("SummonerCystalTokenCrowdsale");
+  const rate = 1400; // 500 wei per token
   const latestBlockTime = await latestTime();
   const openingTime = latestBlockTime + duration.minutes(1);
   const closeTime = openingTime + duration.weeks(1); // 1 week
   console.log("openingTime", openingTime);
   console.log("closeTime", closeTime);
-  const itManTokenCrowdsale = await ITManTokenCrowdsale.deploy(
+  const summonercystalCrowdsale = await SummonerCystalTokenCrowdsale.deploy(
     rate,
     owner,
-    itManToken.address,
+    summonercystalToken.address,
     owner,
     openingTime,
     closeTime
   );
 
-  await itManTokenCrowdsale.deployed();
-  console.log("ITManTokenCrowdsale deployed to:", itManTokenCrowdsale.address);
+  await summonercystalCrowdsale.deployed();
+  console.log("SummonerCystalTokenCrowdsale deployed to:", summonercystalCrowdsale.address);
 
-  // approve crowdsale contract to spend 70% tokens
-  await itManToken.approve(
-    itManTokenCrowdsale.address,
-    totalSupply.mul(ethers.BigNumber.from(70)).div(ethers.BigNumber.from(100))
+  // approve crowdsale contract to spend 8% tokens
+  await summonercystalToken.approve(
+    summonercystalCrowdsale.address,
+    totalSupply.mul(ethers.BigNumber.from(8)).div(ethers.BigNumber.from(100))
   );
 }
 
