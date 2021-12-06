@@ -1,4 +1,10 @@
-# Welcome to dapp-token-ico 👋
+# Welcome to dapp-starter 👋
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ![Version](https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
@@ -6,9 +12,9 @@
 
 > Opinionated Dapp Starter Template
 
-## 🏠 [Homepage](https://dapp-token-ico.productsway.com)
+## 🏠 [Homepage](https://dapp-starter.productsway.com)
 
-## ✨ [Demo](https://dapp-token-ico.productsway.com)
+## ✨ [Demo](https://dapp-starter.productsway.com)
 
 ## Screenshot
 
@@ -16,18 +22,19 @@
 
 ### Connect to MetaMask
 
-![https://gyazo.com/73e88806e52c1b70211dd4911bf5a4af.gif](https://gyazo.com/73e88806e52c1b70211dd4911bf5a4af.gif)
+![https://gyazo.com/6b8f75171de1fab24de552ff7930f4b8.gif](https://gyazo.com/6b8f75171de1fab24de552ff7930f4b8.gif)
 
-### Buy tokens
+### Wallet Connect
 
-Place an order
-![https://gyazo.com/d6361cc2a18ca3140f2aa9b09fc385ca.gif](https://gyazo.com/d6361cc2a18ca3140f2aa9b09fc385ca.gif)
-Buy with MetaMask and wait for confirmation.
-![https://gyazo.com/924565f84487b15f6c391f7a6378de57.gif](https://gyazo.com/924565f84487b15f6c391f7a6378de57.gif)
+![https://gyazo.com/2995c3a2c4bdbda806821839826449dc.gif](https://gyazo.com/2995c3a2c4bdbda806821839826449dc.gif)
+
+### Show balance and sign message
+
+![https://gyazo.com/8e8ca7c89193d6f1463081bcd41c587e.gif](https://gyazo.com/8e8ca7c89193d6f1463081bcd41c587e.gif)
 
 ## Features
 
-- ⚡️ React TypeScript template with [Vite 2](https://vitejs.dev/)
+- ⚡️ The React Framework for Production [NextJs](https://https://nextjs.org//)
 - 📦 [Hardhat](https://hardhat.org/) - Ethereum development environment for professionals
 - 🦾 [TypeChain Hardhat plugin](https://github.com/ethereum-ts/TypeChain/tree/master/packages/hardhat) - Automatically generate TypeScript bindings for smartcontracts while using Hardhat.
 - 🔥 [web3-react](https://github.com/NoahZinsmeister/web3-react/) - A simple, maximally extensible, dependency minimized framework for building modern Ethereum dApps
@@ -52,88 +59,6 @@ yarn dev
 yarn test
 ```
 
-## ICO Token
-
-Create .env from .env.example from root directory. Remember to fill the value for deployed addresses.
-
-```
-ETHERSCAN_API_KEY=ABC123ABC123ABC123ABC123ABC123ABC1
-ROPSTEN_PROVIDER_URL=https://eth-ropsten.alchemyapi.io/v2/<YOUR ALCHEMY KEY>
-PRIVATE_KEY=<YOUR PRIVATE KEY>
-VITE_CROWDSALE_ADDRESS=<YOUR DEPLOYED SMART CONTRACT ADDRESS>
-VITE_PROVIDER_URL=https://eth-ropsten.alchemyapi.io/v2/<YOUR ALCHEMY KEY>
-```
-
-Then deploy to specific network, e.g: Ropsten
-
-```sh
-npx hardhat run scripts/deploy_itmantokencrowdsale.js --network ropsten
-```
-
-Output:
-
-```sh
-Generating typings for: 0 artifacts in dir: src/types for target: ethers-v5
-Successfully generated 3 typings!
-Successfully generated 3 typings for external artifacts!
-SummonerCystalToken deployed to: 0x58f0A11F8B2bD7c5D9251b620dcF502D3A40FCF2
-Name SummonerCystalToken
-Symbol ITM
-Decimals 18
-Total Supply BigNumber { _hex: '0xd3c21bcecceda1000000', _isBigNumber: true }
-Owner 0x096cd10D7BEF8D5923b18b18E9f79CA230ee2285
-openingTime 1630780077
-closeTime 1631384877
-SummonerCystalTokenCrowdsale deployed to: 0x304c476c4521B6d352E76a950581A59Fe2032437
-```
-
-Next step is verifying the IT Man Token
-
-```sh
-npx hardhat verify --network ropsten 0x58f0A11F8B2bD7c5D9251b620dcF502D3A40FCF2
-```
-
-Output:
-
-```sh
-Nothing to compile
-Generating typings for: 0 artifacts in dir: src/types for target: ethers-v5
-Successfully generated 3 typings!
-Successfully generated 3 typings for external artifacts!
-Compiling 1 file with 0.8.4
-Successfully submitted source code for contract
-contracts/SummonerCystalToken.sol:SummonerCystalToken at 0x58f0A11F8B2bD7c5D9251b620dcF502D3A40FCF2
-for verification on Etherscan. Waiting for verification result...
-
-Successfully verified contract SummonerCystalToken on Etherscan.
-https://ropsten.etherscan.io/address/0x58f0A11F8B2bD7c5D9251b620dcF502D3A40FCF2#code
-```
-
-Finally, verify the IT Man Token Crowdsale
-
-```sh
-npx hardhat verify --network ropsten 0x304c476c4521B6d352E76a950581A59Fe2032437 500 0x096cd10D7BEF8D5923b18b18E9f79CA230ee2285 0x58f0A11F8B2bD7c5D9251b620dcF502D3A40FCF2 0x096cd10D7BEF8D5923b18b18E9f79CA230ee2285 1630780077 1631384877
-```
-
-Output:
-
-```sh
-Nothing to compile
-Generating typings for: 0 artifacts in dir: src/types for target: ethers-v5
-Successfully generated 3 typings!
-Successfully generated 3 typings for external artifacts!
-Compiling 1 file with 0.8.4
-
-... some warnings
-
-Successfully submitted source code for contract
-contracts/SummonerCystalTokenCrowdsale.sol:SummonerCystalTokenCrowdsale at 0x304c476c4521B6d352E76a950581A59Fe2032437
-for verification on Etherscan. Waiting for verification result...
-
-Successfully verified contract SummonerCystalTokenCrowdsale on Etherscan.
-https://ropsten.etherscan.io/address/0x304c476c4521B6d352E76a950581A59Fe2032437#code
-```
-
 ## Hardhat guideline
 
 This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
@@ -151,10 +76,10 @@ npx hardhat node
 npx hardhat help
 REPORT_GAS=true npx hardhat test
 npx hardhat coverage
-npx hardhat run scripts/deploy_greeter.js --network localhost
-node scripts/deploy.js
-npx eslint '**/*.js'
-npx eslint '**/*.js' --fix
+npx hardhat run scripts/deploy_greeter.ts --network localhost
+node scripts/deploy.ts
+npx eslint '**/*.ts'
+npx eslint '**/*.ts' --fix
 npx prettier '**/*.{json,sol,md}' --check
 npx prettier '**/*.{json,sol,md}' --write
 npx solhint 'contracts/**/*.sol'
@@ -168,7 +93,7 @@ To try out Etherscan verification, you first need to deploy a contract to an Eth
 In this project, copy the .env.example file to a file named .env, and then edit it to fill in the details. Enter your Etherscan API key, your Ropsten node URL (eg from Alchemy), and the private key of the account which will send the deployment transaction. With a valid .env file in place, first deploy your contract:
 
 ```shell
-npx hardhat run --network ropsten scripts/deploy_greeter.js
+npx hardhat run --network ropsten scripts/deploy_greeter.ts
 ```
 
 Then, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_ADDRESS` in this command:
@@ -186,18 +111,20 @@ Smart contracts deployed using OpenZeppelin Upgrades Plugins can be upgraded to 
 In this project, there are a 2 versions of contract: Box and BoxV2 which is improvement of Box. First deploy your contract:
 
 ```shell
-npx hardhat run --network localhost scripts/deploy_upgradeable_box.js
+npx hardhat run --network localhost scripts/deploy_upgradeable_box.ts
 ```
 
 Then, deploy the upgrade smart contract
 
 ```shell
-npx hardhat run --network localhost scripts/upgrade_box.js
+npx hardhat run --network localhost scripts/upgrade_box.ts
 ```
 
 ## Examples
 
 - [Simple Store App](https://github.com/jellydn/dapp-starter/pull/20): counter-like smart contract, read/write value and listen to event from smart contract.
+- [ICO Token App](https://github.com/jellydn/dapp-token-ico): How to create An ERC20 token and implement ICO smart contract (CrowdSale).
+- [NFT App](https://github.com/jellydn/nft-app): How to create An ERC721 token.
 
 ## Author
 
@@ -209,13 +136,33 @@ npx hardhat run --network localhost scripts/upgrade_box.js
 
 ## Stargazers 🌟
 
-[![Stargazers repo roster for jellydn/dapp-token-ico](https://reporoster.com/stars/jellydn/dapp-token-ico)](https://github.com/jellydn/dapp-token-ico/stargazers)
+[![Stargazers repo roster for jellydn/dapp-starter](https://reporoster.com/stars/jellydn/dapp-starter)](https://github.com/jellydn/dapp-starter/stargazers)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q61Q7YM)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://productsway.com/"><img src="https://avatars.githubusercontent.com/u/870029?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dung Duc Huynh (Kaka)</b></sub></a><br /><a href="https://github.com/jellydn/dapp-starter/commits?author=jellydn" title="Documentation">📖</a> <a href="https://github.com/jellydn/dapp-starter/commits?author=jellydn" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 ---
 

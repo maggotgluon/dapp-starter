@@ -13,25 +13,37 @@ import * as Contracts from ".";
 declare module "hardhat/types/runtime" {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
-      name: "Ownable",
+      name: "OwnableUpgradeable",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Ownable__factory>;
+    ): Promise<Contracts.OwnableUpgradeable__factory>;
     getContractFactory(
-      name: "ERC20",
+      name: "IBeaconUpgradeable",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ERC20__factory>;
+    ): Promise<Contracts.IBeaconUpgradeable__factory>;
     getContractFactory(
-      name: "IERC20Metadata",
+      name: "ERC1967UpgradeUpgradeable",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IERC20Metadata__factory>;
+    ): Promise<Contracts.ERC1967UpgradeUpgradeable__factory>;
     getContractFactory(
-      name: "IERC20",
+      name: "UUPSUpgradeable",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.IERC20__factory>;
+    ): Promise<Contracts.UUPSUpgradeable__factory>;
     getContractFactory(
-      name: "AllowanceCrowdsale",
+      name: "PausableUpgradeable",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.AllowanceCrowdsale__factory>;
+    ): Promise<Contracts.PausableUpgradeable__factory>;
+    getContractFactory(
+      name: "ERC20Upgradeable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ERC20Upgradeable__factory>;
+    getContractFactory(
+      name: "IERC20MetadataUpgradeable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IERC20MetadataUpgradeable__factory>;
+    getContractFactory(
+      name: "IERC20Upgradeable",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.IERC20Upgradeable__factory>;
     getContractFactory(
       name: "Box",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -41,51 +53,54 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.BoxV2__factory>;
     getContractFactory(
-      name: "Crowdsale",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.Crowdsale__factory>;
-    getContractFactory(
       name: "Greeter",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Greeter__factory>;
     getContractFactory(
-      name: "SummonerCystalToken",
+      name: "ITManToken",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.SummonerCystalToken__factory>;
-    getContractFactory(
-      name: "SummonerCystalTokenCrowdsale",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.SummonerCystalTokenCrowdsale__factory>;
-    getContractFactory(
-      name: "TimedCrowdsale",
-      signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.TimedCrowdsale__factory>;
+    ): Promise<Contracts.ITManToken__factory>;
 
     getContractAt(
-      name: "Ownable",
+      name: "OwnableUpgradeable",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.Ownable>;
+    ): Promise<Contracts.OwnableUpgradeable>;
     getContractAt(
-      name: "ERC20",
+      name: "IBeaconUpgradeable",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.ERC20>;
+    ): Promise<Contracts.IBeaconUpgradeable>;
     getContractAt(
-      name: "IERC20Metadata",
+      name: "ERC1967UpgradeUpgradeable",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.IERC20Metadata>;
+    ): Promise<Contracts.ERC1967UpgradeUpgradeable>;
     getContractAt(
-      name: "IERC20",
+      name: "UUPSUpgradeable",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.IERC20>;
+    ): Promise<Contracts.UUPSUpgradeable>;
     getContractAt(
-      name: "AllowanceCrowdsale",
+      name: "PausableUpgradeable",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.AllowanceCrowdsale>;
+    ): Promise<Contracts.PausableUpgradeable>;
+    getContractAt(
+      name: "ERC20Upgradeable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ERC20Upgradeable>;
+    getContractAt(
+      name: "IERC20MetadataUpgradeable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IERC20MetadataUpgradeable>;
+    getContractAt(
+      name: "IERC20Upgradeable",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.IERC20Upgradeable>;
     getContractAt(
       name: "Box",
       address: string,
@@ -97,30 +112,15 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.BoxV2>;
     getContractAt(
-      name: "Crowdsale",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.Crowdsale>;
-    getContractAt(
       name: "Greeter",
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.Greeter>;
     getContractAt(
-      name: "SummonerCystalToken",
+      name: "ITManToken",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.SummonerCystalToken>;
-    getContractAt(
-      name: "SummonerCystalTokenCrowdsale",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.SummonerCystalTokenCrowdsale>;
-    getContractAt(
-      name: "TimedCrowdsale",
-      address: string,
-      signer?: ethers.Signer
-    ): Promise<Contracts.TimedCrowdsale>;
+    ): Promise<Contracts.ITManToken>;
 
     // default types
     getContractFactory(

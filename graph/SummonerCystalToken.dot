@@ -1,7 +1,0 @@
-strict digraph {
-  constructor
-  _mint
-  mint
-  constructor -> _mint
-  mint -> _mint
-}
